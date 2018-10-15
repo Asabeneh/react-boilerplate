@@ -1,25 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Header from './componens/Header';
+import Main from './componens/Main';
+import Footer from './componens/Footer';
 import './App.css';
+
+const techs = ['HTML', 'CSS', 'JavaScript'];
+
+const menu = [{
+    tech: 'HTML',
+    link: 'https://developer.mozilla.org/kab/docs/Lmed/Getting_started_with_the_web/HTML_basics'
+  },
+  {
+    tech: 'CSS',
+    link: 'https://developer.mozilla.org/kab/docs/Learn/CSS'
+  },
+  {
+    tech: 'JavScript',
+    link: 'https://developer.mozilla.org/en-US/docs/Learn/JavaScript'
+  }
+]
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      < Header
+      title = "Getting Started React"
+      subtitle = "React.js"
+      mandatory = {techs[2]}
+      createdAt = {2012}
+      good = {true}/>
+      <Main techs= {techs}/>
+      <Footer  menu = {menu} date = {new Date()}/>
       </div>
     );
   }
