@@ -1,3 +1,30 @@
-
-
-
+header,footer{
+    background:#333;
+    text-align: center;
+    /* color:white; */
+}
+h1{
+    font-size:44px;
+    color:#61dafb;
+}
+main {
+    margin-left:50px;
+    margin-right:50;
+}
+input {
+    height: 25px;
+    margin:3px;
+    outline:none;
+    border:2px solid grey;
+}
+button {
+    height:30px;
+    margin:2px;
+}
+p{
+     text-align: justify;
+  text-justify: inter-character;
+}
+.small-font{
+    font-size:8px;
+}

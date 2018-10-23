@@ -1,5 +1,4 @@
 import React from 'react';
-import './footer.css'
 
 const Footer = (props) => {
 const menu = props.menu.map((item,i) => {
