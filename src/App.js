@@ -2,11 +2,12 @@ import React, {Component} from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Link,
   NavLink,
+  Link,
+  Switch,
   Redirect,
-  Prompt,
-} from 'react-router-dom';
+  Prompt
+} from "react-router-dom";
 import Header from './componens/Header';
 import Main from './componens/Main';
 import Footer from './componens/Footer';
@@ -70,10 +71,19 @@ class App extends Component {
   changeNightMode = () => {
     const bgcolor = this.state.bgcolor === 'white' ? 'grey' : 'white';
     const color = this.state.color === 'grey' ? 'white' : 'grey';
-    this.setState({
-      bgcolor,
-      color,
-    });
+    if(this.state.color!=='orange'){
+      this.setState({
+        bgcolor,
+        color,
+      });
+    }
+    else {
+      this.setState({
+        bgcolor,
+        color:'white'
+      });
+    }
+ 
     console.log(this.state.color);
   };
   addOne = () => {
@@ -90,9 +100,13 @@ class App extends Component {
   };
   changeColor = () => {
     const color = this.state.color === 'grey' ? 'orange' : 'grey';
-    this.setState({
-      color,
-    });
+    if(color !== this.state.bgcolor){
+      this.setState({
+        color,
+      });
+
+    }
+   
     console.log(color)
   };
   handleOnChange = e => {
@@ -148,6 +162,19 @@ class App extends Component {
           makeFontSmall = {this.makeFontSmall}
           changeColor={this.changeColor}
         />
+
+        <Router>
+          <div>
+            <nav>
+              <Link to="fronend">Front End</Link>
+              <Link to="backend">Back End</Link>
+              <Link to="data-science">Data Science</Link>
+              <Link to="data-visualization">Data Visualization</Link>
+              <Switch>
+              </Switch>
+            </nav>
+          </div>
+        </Router>
         <Main techs={techs} school={school} contents={contents} />
         <p>Getting user data from a form:</p>
         <form onSubmit={this.handleSubmit}>

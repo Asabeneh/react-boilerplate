@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-
 class Header extends Component {
   render() {
     let {
@@ -11,8 +10,7 @@ class Header extends Component {
       makeFontSmall,
       changeColor
     } = this.props;
-    return (
-      <header>
+    return <header>
         <button onClick={changeNightMode}>Night Mode</button>
         <button onClick={makeFontBig}>
           <i className="fas fa-font big-font" />
@@ -24,8 +22,7 @@ class Header extends Component {
         <h1>{title}</h1>
         <h3>{subtitle}</h3>
         <h3>It was created in {createdAt}</h3>
-      </header>
-    );
+      </header>;
   }
 }
 export default Header;
